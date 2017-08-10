@@ -1,0 +1,79 @@
+<div class="container">	
+	<!-- Cabecero con el titulo principal -->
+	<div class="row">
+		<div class="col-sm-4">
+			<h3 id="header-test">Test 
+				<b><span id="header-beetrack">Beetrack</span></b>
+			</h3>
+		</div>	
+	</div>
+	<!-- Buscador y boton de nuevo contacto -->
+	<br><br>
+	<div class="row">
+		<div class="col-md-4">
+			<!-- Buscador  -->
+        	<form [formGroup]="busqueda_form" (ngSubmit)="busqueda()">
+				<div class="input-group" id="test">
+					<input formControlName="cuerpo" type="text" class="form-control" placeholder="Buscar un contacto..." required>
+					<span class="input-group-btn">
+				    	<button id="plus-search-id" class="btn btn-default" type="submit">
+				    		<span class="glyphicon glyphicon-search"></span>
+				    	</button>
+				  	</span>
+				</div>
+	        </form>
+    	</div>
+		<!-- Boton de nuevo contacto -->
+		<div class="col-md-8" id="column-test">
+			<div class="pull-right">
+				<button data-toggle="modal" data-target="#modal_contacto" type="button" class="btn btn-warning">
+					<span id="plus-new-contact-id" class="glyphicon glyphicon-plus-sign"></span> Nuevo Contacto
+				</button>
+			</div>
+		</div>	
+	</div>
+	<br>
+</div>
+
+
+
+<!-- Modal para el POST de usuario -->
+<div id="modal_contacto" class="modal fade" role="dialog">
+  	<div class="modal-dialog">
+		<div class="modal-content">
+			<!-- Header del modal  -->
+		  	<div class="modal-header">
+		  		<a><i class="fa fa-close" data-dismiss="modal" hidden #closeBtn></i></a>
+		    	<button type="button" class="close" data-dismiss="modal">&times;</button>
+		    	<h3 class="modal-title">Agregar nuevo contacto</h3>
+		  	</div>
+		  	<!-- Cuerpo del modal -->
+		  	<div class="modal-body">
+		    	<div class="row">
+                  	<div class="col-sm-12">
+                  	<!-- Formulario de agregar contacto -->
+                        <form id="loginForm" [formGroup]="contact_form" (ngSubmit)="crear_contacto()">
+                            <div class="form-group">
+                                <label class="control-label">URL Imagen de perfil <b class="asterisk_required">*</b></label>
+                                <input type="text" class="form-control" formControlName="photo" value="" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Nombre <b class="asterisk_required">*</b></label>
+                                <input type="text" class="form-control" formControlName="name" required>
+                               
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label">Descripcion <b class="asterisk_required">*</b></label>
+                                <textarea class="form-control" formControlName="description" required></textarea>
+                               
+                            </div>
+                            <div class="form-actions">
+                            	<button class="save_btn" type="submit" class="btn btn-warning" style="padding: 7px 50px 7px 50px;">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+		  	</div>
+		</div>
+  	</div>
+</div>

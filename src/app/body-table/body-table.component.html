@@ -1,0 +1,118 @@
+
+<!-- Body de la pagina -->
+
+<div class="container">
+	<!-- Separacion con los titulos de la tabla (nombre/descripcion) -->
+	<div class="row table-contact">
+		<div class="col-sm-4 table-description">
+			<h5> 
+				<b>Nombre</b>
+			</h5>
+		</div>	
+		<div class="col-sm-8 table-description">
+			<h5> 
+				<b>Descripción</b>
+			</h5>
+		</div>
+
+		<!-- Caso de no haber contacto -->
+		<div class="row" *ngIf="primer_contacto == null;">
+			<div class="col-sm-12">
+				<p style="text-align: center;">Disculpe, ninguna busqueda corresponde a esa entrada...</p>
+			</div>
+		</div>	
+
+	</div>
+
+	<!-- Tabla de usuarios llenada por API -->
+	<!-- Primer usuario -->
+	<div *ngIf="primer_contacto != null;"> 
+		<div class="row table-contact" id="first_element" >
+			<div class="col-sm-4 contact-names">
+				<!-- El nombre tiene nombre+imagen -->
+				<div class="row contact_info">
+					<div class="col-sm-4 img-names-circle-container">
+						<!-- Imagen -->
+						<div class="img-names-circle" [style.background-image]="'url(' + primer_contacto.photo + ')'">
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<h5 id="nombre-id" > 
+							<b>{{primer_contacto.name}}</b>
+							<br><br>
+							<!-- Icono para eliminar usuario -->
+							<a href="#" (click)="eliminarContacto(primer_contacto.id)">
+								<span id="trash-icon-{{primer_contacto.id}}" style="color:#ffda21;" class="glyphicon glyphicon-trash"></span>
+							</a>
+						</h5>
+					</div>
+				</div>
+			</div>	
+			<!-- Descripcion del usuario -tambien dada por API- -->
+			<div class="col-sm-8 contact-description">
+				<h6> 
+					<b>{{primer_contacto.description}}</b>
+				</h6>
+			</div>	
+		</div>
+
+		<!-- Resto de usuarios -->
+		<div *ngFor="let contacto of contactos" class="row table-contact">
+			<div class="col-sm-4 contact-names">
+				<!-- El nombre tiene nombre+imagen -->
+				<div class="row contact_info">
+					<div class="col-sm-4 img-names-circle-container">
+						<!-- Imagen -->
+						<div class="img-names-circle" [style.background-image]="'url(' + contacto.photo + ')'">
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<h5 id="nombre-id"> 
+							<b>{{contacto.name}}</b>
+							<br><br>
+							<!-- Icono para eliminar usuario -->
+							<a href="#" (click)="eliminarContacto(contacto.id)">
+								<span id="trash-icon-{{contacto.id}}" style="color:#ffda21; display: none;" class="glyphicon glyphicon-trash"></span>
+							</a>
+						</h5>
+					</div>
+				</div>
+			</div>	
+			<!-- Descripcion del usuario -tambien dada por API- -->
+			<div class="col-sm-8 contact-description">
+				<h6> 
+					<b>{{contacto.description}}</b>
+				</h6>
+			</div>	
+		</div>
+
+
+
+		<!-- "Footer" o Siguiente/Anterior Pagina  -->
+		<!-- Hacer un Ngif aqui (para desplegar -o no- el link) -->
+		<div class="col-sm-12">
+			<div class="page-header">
+				<div *ngIf="current_page > 1;" class="pull-left">
+					<a class="edited-a" href="#">
+						<h5 (click)="refreshContact('before')">
+							<b>
+								<span class="glyphicon glyphicon-circle-arrow-left arrow-icon"></span> Anterior pagina
+							</b>
+						</h5>
+					</a>
+				</div>
+			  	<div *ngIf="mas_contactos == true;" class="pull-right">
+			  		<a class="edited-a" href="#">
+			  			<h5 (click)="refreshContact('next')" class="text-right">
+			  				<b>Siguiente pagina 
+			  					<span class="glyphicon glyphicon-circle-arrow-right arrow-icon"></span>
+			  				</b>
+			  			</h5>
+			  		</a>
+			  	</div>
+			  	<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+
+</div>

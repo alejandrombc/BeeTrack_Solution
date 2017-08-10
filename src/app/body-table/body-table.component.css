@@ -1,0 +1,110 @@
+/* CSS del body */
+/* BeeTrack - Alejandro Barone */
+
+/* El primer contacto de la tabla */
+#first_element{
+	/* Sombras box shadow (para tenerlas desde arriba*/
+    -webkit-box-shadow: inset 0 8px 4px -4px #ddd;
+    -moz-box-shadow: inset 0 8px 4px -4px #ddd;
+    box-shadow: inset 0 8px 4px -4px #ddd;
+
+	
+	/* Configuracion de bordes*/ 
+	border-bottom: 2px solid #C9C9C9;
+}
+
+/* Contiene estilo general de la tabla*/
+.table-contact{
+	background-color: white; 
+	border-radius: 1px; 
+	margin-left: auto; 
+	margin-right: auto;
+	color:#2e2e27;
+	border-bottom: 2px solid #C9C9C9;
+	border-right: 2px solid #C9C9C9;
+	padding-right: 50px; 
+}
+
+/* Contiene estilo de la definicion de la tabla (nombre/descripcion) */
+.table-description{
+	padding: 7px 0px 7px 20px;
+	color:#2e2e27;
+}
+
+/* Contiene estilos de la descripcion de contactos*/
+.contact-description{
+	/* Vacio, futuro update */
+}
+
+
+/* Contiene estilos de los nombres de contactos */
+.contact-names{
+	padding: 10px 0px 10px 20px; 
+	-webkit-box-shadow: 10px 0px 23px -16px rgba(0,0,0,0.75);
+	-moz-box-shadow: 10px 0px 23px -16px rgba(0,0,0,0.75); 
+	box-shadow: 10px 0px 23px -16px rgba(0,0,0,0.75); 
+	border-right: 2px solid #C9C9C9;
+}
+
+/* Media Query para centrar el texto en resize */
+@media (max-width: 720px) {
+		.table-contact{
+			text-align: center;
+			margin-bottom: 10px;
+
+		}
+		
+		/* Responsive de imagen de perfil */
+		.img-names-circle-container{
+			margin-right: 5%;
+		}
+}
+
+/* Para la visualizacion circular de las imagenes (sin importar dimensiones) */
+.img-names-circle{
+	/* Para el responsive*/
+	max-width: 100%;
+	width:100%;
+	height:auto;
+	display:block;
+	/* Hacer match entre width y height*/
+	padding-top:100%;
+
+	/* Hacer un circulo */
+	border-radius:50%;
+
+	/* Centrar la imagen en su centro */
+	background-position-y: center;
+	background-position-x: center;
+	background-repeat: no-repeat;
+
+	/* Rellena el div */
+	background-size: cover;
+}
+
+
+/* Color del glyphicon de flechas "siguiente y anterior pagina" */
+.arrow-icon{
+	color:#FFD438;;
+}
+
+/* Estilos para los hipervinculos, con esto no se mostrata su color habitual */
+.edited-a{
+	color:black; 
+	text-decoration: none;
+}
+
+/* Cuando hay un hover en un link */
+.edited-a:hover{
+	color:#787878; 
+}
+
+
+span[id^="trash"]{ 
+	display:none !important; 
+}
+
+
+.contact_info:hover span[id^="trash"]{ 
+	display:block !important; 
+}

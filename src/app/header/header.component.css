@@ -1,0 +1,78 @@
+/* CSS del header */
+/* BeeTrack - Alejandro Barone */
+
+/* Media query para un mejor resize de la pagina */
+@media (max-width: 1024px) {
+		#column-test{
+			float:right;
+			display: block;
+  			margin-top: 15px;
+		}
+}
+
+/* Asignacion de colores a los titulos correspondientes */
+#header-test{
+	color:#888;
+}
+
+#header-beetrack{
+	color:#2e2e27;
+}
+
+/* Asignacion de colores a los span/glyphicons */
+
+#plus-search-id{
+	color:#FFC81C;
+}
+
+#plus-new-contact-id{
+	color:#FFF;
+}
+
+.asterisk_required{
+	color:#FF530D;
+}
+
+/* El resize horizontal muchas veces no es practico, lo eliminamos 	*/
+textarea{
+	resize: vertical;
+}
+
+/* Estilo para el boton de guardado del modal */
+.save_btn{
+	padding: 25px 50px 25px 50px !important;
+}
+
+/* Div que permite central el boton del modal */
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
+
+/* Estilo del modal, principalmente para estar centrado en la pantalla */
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px; 
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+/* Quitar los bordes redondeados al modal */
+.modal-content  {
+    -webkit-border-radius: 1px !important;
+    -moz-border-radius: 1px !important;
+    border-radius: 1px !important; 
+}

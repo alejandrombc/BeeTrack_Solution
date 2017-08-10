@@ -1,0 +1,7 @@
+<!-- Llamamos al componente cabecero -->
+<!-- El evento es para llamar una funcion de una clase hermana -->
+<app-header (eventBusqueda)="callBack.refreshContact($event)" >Cargando cabecero...</app-header>
+
+<!-- Llamamos al componente del cuerpo -->
+<!-- Callback es el identificador de la "clase hermana" -->
+<app-body-table #callBack >Cargando cuerpo...</app-body-table>
